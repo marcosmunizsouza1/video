@@ -1,0 +1,504 @@
+@charset "UTF-8"; 
+/*Codificação que suporta caracteres especiais da Língua Portuguesa (como ç, á, é, ã, etc.).*/
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap'); 
+/*Serve para importar estilos externos (Internet) dentro do CSS.*/
+
+@font-face { 
+    /*é usada para referenciar uma fonte personalizada que será utilizada no projeto, normalmente hospedada localmente (em uma pasta do seu site) ou em um servidor*/
+
+    font-family: 'Android'; 
+    /*é usada para designar o nome da fonte que será aplicada ao texto.*/
+
+    src: url('../fontes/idroid.otf') format('opentype'); 
+    /** define o local e o formato da fonte. Os formatos mais comuns são: woff (woff), woff2 (woff2), ttf (truetype) e otf (opentype).**/
+
+    font-weight: normal; 
+        /* controla a espessura (peso) da fonte.
+        Variações:
+            Normal (400): peso padrão da fonte;
+            bold (700): negrito;
+            lighter: mais leve que o peso herdado;
+            bolder: mais pesado que o peso herdado;
+            100 a 900: Escala númerica (quanto maior, mais espesso.
+        */
+}
+
+:root { 
+    /*define variáveis globais no CSS, acessíveis em todo o documento.*/
+    /*Paleta de Cores pré-definidas*/
+    --cor0: #ebe5c5;
+    --cor1: #83e1ad;
+    --cor2: #3ddc84;
+    --cor3: #2fa866;
+    --cor4: #1a5c37;
+    --cor5: #063d1e;
+    --cor6: #ffffff;
+
+    --fonte-padrao: Helvetica, Verdana, Arial, sans-serif; 
+    /*define a variável "fonte padrão", onde serão utilizadas as fontes, obedecendo a sua ordem de definição. Caso o navegador não consiga usar as fontes descritas, ele assume a sans-serif que é uma fonte sem serifado*/
+
+    --fonte-destaque: 'Bebas Neue', cursive; 
+    /*define a variável "fonte destaque", onde serão utilizadas as fontes estabeleciadas obedecendo a sua ordem de definição. Caso o navegador não consiga usar as fontes descritas, ele assume a cursive que é uma fonte genética*/
+
+    --fonte-android: 'Android', cursive; 
+}
+
+* { 
+    /*aplica as regras a todos os elementos do documento. É muito usado para definir configurações gerais que valem para toda a página, como margens, espaçamentos ou fontes.*/
+
+    margin: 0px; 
+    /* - define o espaço externo entre o elemento e os elementos ao redor dele.
+    Variações:
+        margin: 20px; 20px em todos os lados.
+        margin: 10px 30px; 10px em cima/baixo e 30px nas laterais.
+        margin: 10px 20px 30px; 10px para cima, 20px nas laterais, 30px embaixo.
+        margin: 10px 20px 30px 40px; 10px em cima, 20px direita, 30px embaixo e 40px esquerda.
+        margin: auto; cenraliza horiontalmente.
+    */
+
+    padding: 0px; 
+    /*elimina todos os espaçamentos internos do elemento (superior, inferior, esquerda e direita).*/
+
+    border-radius: 0px; 
+    /*mantém as bordas retas, sem arredondamento.*/
+}
+
+.center {
+
+    text-align: center; 
+    /*define como o texto será alinhado dentro do elemento: left (esquerdo), right (direito), justif (justificado)  e  center (centralidado)*/
+}
+
+body {
+
+    background-color: var(--cor0); 
+    /*aplica a cor de fundo definida pela variavel global "--cor0"*/
+
+    font-family: var(--fonte-padrao); 
+    /*aplica a fonte definida pela variavel global "--fonte-destaque"*/
+
+}
+
+a.externo::after {
+    content: '\1F517';
+}
+header {
+
+    background-image: linear-gradient(to bottom, var(--cor3), var(--cor5)); 
+    /*aplica um gradiente vertical no fundo do elemento, indo da cor --cor3 para --cor5*/
+
+    min-height: 100px; 
+    /*garante que o elemento nunca fique menor que o valor definido, mas pode crescer se necessário.*/
+
+    text-align: center; 
+    /* define como o texto será alinhado dentro do elemento: left (esquerdo), right (direito), justif (justificado)  e  center (centralidado)*/
+
+    padding-top: 20px; 
+    /*adiciona espaço interno na parte do topo do elemento*/
+
+    padding-bottom: 20px; 
+    /*adiciona espaço interno na parte inferior do elemento*/
+}
+
+header > h1 {
+
+    color: var(--cor6); 
+    /*aplica a cor definida pela variável global "--cor6"*/
+
+    font-size: 5em;
+    /* controla o tamanho da fonte e pode ser definido em pixels, unidades relativas ou porcentagens.
+    Variações:
+        - px → bom para precisão, mas pouco flexível.
+        - em/rem → recomendados para design responsivo, pois se adaptam ao contexto.
+        - % → útil para ajustes proporcionais.
+    */
+
+    font-family: var(--fonte-destaque); 
+    /*aplica a fonte definida pela variavel global "--fonte-destaque"*/
+
+    font-weight: normal;
+        /* controla a espessura (peso) da fonte.
+        Variações:
+            Normal (400): peso padrão da fonte;
+            bold (700): negrito;
+            lighter: mais leve que o peso herdado;
+            bolder: mais pesado que o peso herdado;
+            100 a 900: Escala númerica (quanto maior, mais espesso.
+        */
+
+    margin-bottom: -15px; 
+    /*controla o espaço externo abaixo do elemento. Com o valor 0px, você elimina esse espaço.*/
+
+    text-shadow: 3px 3px 10px  rgba(0, 0, 0, 0.932); 
+    /*cria sombras em textos, permitindo controlar posição, suavidade e cor. Os deslocamentos das posições são: horizontal, vertical e o raio de desfoque da sombra e a cor da sombra*/
+
+
+}
+
+header > p { 
+    /*seletor CSS que aplica estilos apenas aos parágrafos <p> que estão diretamente dentro do header (Cabeçalho).*/
+
+    font-family: var(--fonte-padrao);
+    /*aplica a fonte definida pela variavel global "--fonte-destaque"*/
+
+    font-style: italic ;
+
+    font-size: 1.5em; 
+    /* controla o tamanho da fonte e pode ser definido em pixels, unidades relativas ou porcentagens.
+    Variações:
+        - px → bom para precisão, mas pouco flexível.
+        - em/rem → recomendados para design responsivo, pois se adaptam ao contexto.
+        - % → útil para ajustes proporcionais.
+    */
+
+    color:antiquewhite ; 
+    /*aplica a cor branca ao texto*/
+
+    max-width: 700px; 
+    /*limita a largura máxima do elemento, mas permite que ele se ajuste para telas menores*/
+
+    padding-right: 10px; 
+    /*adiciona espaço interno no lado direito do elemento*/
+
+    padding-left: 10px; 
+    /*adiciona espaço interno no lado esquerdo do elemento*/
+
+    margin: auto; 
+    /* - define o espaço externo entre o elemento e os elementos ao redor dele.
+    Variações:
+        margin: 20px; 20px em todos os lados.
+        margin: 10px 30px; 10px em cima/baixo e 30px nas laterais.
+        margin: 10px 20px 30px; 10px para cima, 20px nas laterais, 30px embaixo.
+        margin: 10px 20px 30px 40px; 10px em cima, 20px direita, 30px embaixo e 40px esquerda.
+        margin: auto; cenraliza horiontalmente.
+    */
+
+    text-shadow: 2px 2px 15px rgb(0, 0, 0); 
+    /*cria sombras em textos, permitindo controlar posição, suavidade e cor. Os deslocamentos das posições são: horizontal, vertical e o raio de desfoque da sombra e a cor da sombra*/
+}
+
+nav { 
+    /*é um seletor que estiliza a tag <nav>, usada em HTML para definir uma seção de navegação (geralmente menus, links principais, etc.)*/
+
+    background-color: var(--cor5); 
+    /*aplica ao fundo do elemento a cor definida pela variável global "--cor5".*/
+
+    padding: 10px;
+    /*adiciona 10px de espaço interno em todos os lados do elemento*/
+
+    box-shadow: 0px 7px 7px black; 
+    /*Definição da sombra da caixa com a sua cor*/
+}
+
+nav > a { 
+    /*estiliza apenas os links diretos do menu de navegação, garantindo mais controle sobre quais elementos recebem os estilos.*/
+
+    color: white; 
+    /*aplica a cor branca ao texto*/
+
+    padding: 10px; 
+    /*adiciona 10px de espaço interno em todos os lados do elemento*/
+
+    border-radius: 5px 5px 0px 0px; 
+    /* Esse código arredonda apenas os cantos superiores do elemento, deixando os inferiores retos. A sequência é: Sup/Esq, Sup/Dir, Inf/Esq e Inf/Dir*/
+
+    text-decoration: none; 
+    /*Define as decorações do texto: remover qualquer decoração(none), sublinha (underline), sobrescrito (overline), riscado/taxado (line-through), e multiplos efeitos (underline overline)*/
+
+    font-weight: bold; 
+        /* controla a espessura (peso) da fonte.
+        Variações:
+            Normal (400): peso padrão da fonte;
+            bold (700): negrito;
+            lighter: mais leve que o peso herdado;
+            bolder: mais pesado que o peso herdado;
+            100 a 900: Escala númerica (quanto maior, mais espesso.
+        */
+}
+
+nav > a:hover {  
+    /*estiliza os links diretos do menu de navegação quando o usuário interage com eles*/
+
+    background-color: var(--cor3); 
+    /*altera a cor de fundo do menu quando o mouse passa por cima*/
+
+    color: var(--cor5); 
+    /*aplica ao texto a cor definida pela variável global "--cor5" quando o mouse passa por cima*/
+
+    transition-duration: 0.2s;
+    /*controla quanto tempo a transição leva para acontecer, deixando as mudanças mais suaves.
+        - Curto (0.2s – 0.3s) → ideal para efeitos sutis em botões e links.
+        - Médio (0.5s – 1s) → bom para animações mais perceptíveis.
+        - Longo (2s ou mais) → usado em efeitos dramáticos ou destaque visual.*/
+    
+}
+main { 
+    /*é um seletor que estiliza a tag <main>, usada em HTML para definir o conteúdo principal da página*/
+
+    min-width: 300px;
+
+    max-width: 1000px;
+
+    margin: auto;
+        /* - define o espaço externo entre o elemento e os elementos ao redor dele.
+    Variações:
+        margin: 20px; 20px em todos os lados.
+        margin: 10px 30px; 10px em cima/baixo e 30px nas laterais.
+        margin: 10px 20px 30px; 10px para cima, 20px nas laterais, 30px embaixo.
+        margin: 10px 20px 30px 40px; 10px em cima, 20px direita, 30px embaixo e 40px esquerda.
+        margin: auto; cenraliza horiontalmente.
+    */
+
+    margin-bottom: 30px;
+
+    padding: 20px;
+
+    background-color: var(--cor1); 
+    /*altera a cor de fundo*/
+
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.479);
+}
+
+main h1 { 
+    /*Definição do <h1> no main*/
+
+    color: var(--cor5); 
+    /*aplica ao texto a cor definida pela variável global "--cor5"*/
+
+    font-family: var(--fonte-android); 
+    /*aplica a fonte definida pela variavel global "--fonte-android"*/
+
+    font-size: 1.8;
+    /* controla o tamanho da fonte e pode ser definido em pixels, unidades relativas ou porcentagens.
+    Variações:
+        - px → bom para precisão, mas pouco flexível.
+        - em/rem → recomendados para design responsivo, pois se adaptam ao contexto.
+        - % → útil para ajustes proporcionais.
+    */
+}
+
+main h2 { 
+    /*é um seletor que estiliza a tag <main>, usada em HTML para definir o conteúdo principal da página.*/
+
+    font-family: var(--fonte-android); 
+    /*aplica a fonte definida pela variavel global "--fonte-android"*/
+
+    font-size: 1.3em;
+    /* controla o tamanho da fonte e pode ser definido em pixels, unidades relativas ou porcentagens.
+    Variações:
+        - px → bom para precisão, mas pouco flexível.
+        - em/rem → recomendados para design responsivo, pois se adaptam ao contexto.
+        - % → útil para ajustes proporcionais.
+    */
+
+    background-image: linear-gradient(to right, var(--cor5), var(--cor3), var(--cor1)/*, transparent*/);
+    color: var(--cor6);
+    text-shadow: 5px 5px 10px black;
+    padding: 10px;
+    border-radius: 5px;
+
+    font-weight: normal; 
+        /* controla a espessura (peso) da fonte.
+        Variações:
+            Normal (400): peso padrão da fonte;
+            bold (700): negrito;
+            lighter: mais leve que o peso herdado;
+            bolder: mais pesado que o peso herdado;
+            100 a 900: Escala númerica (quanto maior, mais espesso.
+        */
+}
+
+main p {
+    margin: 15px 0px;
+        /* - define o espaço externo entre o elemento e os elementos ao redor dele.
+    Variações:
+        margin: 20px; 20px em todos os lados.
+        margin: 10px 30px; 10px em cima/baixo e 30px nas laterais.
+        margin: 10px 20px 30px; 10px para cima, 20px nas laterais, 30px embaixo.
+        margin: 10px 20px 30px 40px; 10px em cima, 20px direita, 30px embaixo e 40px esquerda.
+        margin: auto; cenraliza horiontalmente.
+    */
+    text-align: justify;
+    /* define como o texto será alinhado dentro do elemento: left (esquerdo), right (direito), justif (justificado)  e  center (centralidado)*/
+
+    text-indent: 30px;
+    /*  - controla o recuo da primeira linha (ou de linhas específicas) em blocos de texto.
+        - O valor pode ser em px, em, %, cm, etc.
+        Valores possíveis:
+            text-indent: 0; sem recuo padrão.
+            text-indent: 2em; recuo proporcional ao tamanho da fonte.
+            text-indent: 30%; recuo relativo à largura do bloco.
+            text-indent: -2em; recuo negativo (primeira linha "avança" para fora da margem.
+    */
+
+    line-height: 2em;
+        /*  - controla a altura da linha de texto, ou seja, o espaço vertical entre linhas dentro de um mesmo bloco.
+        Variações:
+            line-height: normal; Valor padrão;
+            line-height: 1; Linhas bem próximas, quase sem espaçamento;
+            line-height: 1.5; Espaçamento confortável, muito usado em textos corridos;
+            line-height: 2; Espaço amplo, bom para destacar ou facilitar a leitura;
+    */
+}
+
+main strong {
+    color: var(--cor4);
+    font-weight: bold;
+        /* controla a espessura (peso) da fonte.
+        Variações:
+            Normal (400): peso padrão da fonte;
+            bold (700): negrito;
+            lighter: mais leve que o peso herdado;
+            bolder: mais pesado que o peso herdado;
+            100 a 900: Escala númerica (quanto maior, mais espesso.
+        */ 
+}
+
+main a {
+    text-decoration: none;
+    font-weight: bold;
+        /* controla a espessura (peso) da fonte.
+        Variações:
+            Normal (400): peso padrão da fonte;
+            bold (700): negrito;
+            lighter: mais leve que o peso herdado;
+            bolder: mais pesado que o peso herdado;
+            100 a 900: Escala númerica (quanto maior, mais espesso.
+        */
+    color: var(--cor5);
+    background-color: var(--cor1);
+    padding: 2px 6px;
+}
+
+main a:hover {
+    text-decoration: underline;
+    color: var(--cor4);
+}
+
+main img {
+
+    width: 100%;
+}
+
+main img.pequena {
+    max-width: 350px;
+    display: block;
+    margin: auto;
+        /* - define o espaço externo entre o elemento e os elementos ao redor dele.
+    Variações:
+        margin: 20px; 20px em todos os lados.
+        margin: 10px 30px; 10px em cima/baixo e 30px nas laterais.
+        margin: 10px 20px 30px; 10px para cima, 20px nas laterais, 30px embaixo.
+        margin: 10px 20px 30px 40px; 10px em cima, 20px direita, 30px embaixo e 40px esquerda.
+        margin: auto; cenraliza horiontalmente.
+    */
+}
+
+div.video {
+    background-color: var(--cor5);
+    margin: 0px -20px 30px -20px;
+    padding: 20px;
+    padding-bottom: 57%;
+    position: relative;
+
+}
+
+div.video > iframe {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+
+}
+aside {
+
+    background-color: var(--cor1);
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.493);
+
+}
+
+aside > ul {
+    list-style-type: '\2714\00A0\00A0';
+    list-style-position: inside;
+    columns: 2;
+}
+
+aside > h3 {
+    background-color: var(--cor4);
+    color: white;
+    padding: 10px;
+    margin: -10px -10px 0px -10px;
+    border-radius: 5px 5px 0px 0px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.493);
+}
+
+🔗
+footer { 
+    /*é um seletor que estiliza a tag <footer>, usada em HTML para definir o rodapé da página ou de uma seção.*/
+
+    background-color: var(--cor5); 
+    /*aplica ao fundo do elemento a cor definida pela variável global "--cor5".*/
+
+    color: white; 
+    /*aplica a cor branca ao texto*/
+
+    font-size: .8;
+    /* controla o tamanho da fonte e pode ser definido em pixels, unidades relativas ou porcentagens.
+    Variações:
+        - px → bom para precisão, mas pouco flexível.
+        - em/rem → recomendados para design responsivo, pois se adaptam ao contexto.
+        - % → útil para ajustes proporcionais.
+    */
+
+    padding: 10px; 
+    /*adiciona 10px de espaço interno em todos os lados do elemento*/
+
+
+}
+
+footer > p {
+
+    text-shadow: 1px 2px 2px  black; 
+    /*cria sombras em textos, permitindo controlar posição, suavidade e cor. Os deslocamentos das posições são: horizontal, vertical e o raio de desfoque da sombra e a cor da sombra*/
+
+    text-align: center; 
+    /* define como o texto será alinhado dentro do elemento: left (esquerdo), right (direito), justif (justificado)  e  center (centralidado)*/
+
+    text-decoration: none; 
+    /*Define as decorações do texto: remover qualquer decoração(none), sublinha (underline), sobrescrito (overline), riscado/taxado (line-through), e multiplos efeitos (underline overline)*/
+
+    background-color: var(--cor5); 
+    /*aplica ao fundo do elemento a cor definida pela variável global "--cor5".*/
+
+    padding: 10px; 
+    /*adiciona 10px de espaço interno em todos os lados do elemento*/
+
+    color: white; 
+    /*aplica a cor branca ao texto*/
+
+        margin-top: 20px; 
+    /*elimina todas as margens externas do elemento.*/
+}
+
+footer a {
+    color: white;
+    font-weight: bold;
+        /* controla a espessura (peso) da fonte.
+        Variações:
+            Normal (400): peso padrão da fonte;
+            bold (700): negrito;
+            lighter: mais leve que o peso herdado;
+            bolder: mais pesado que o peso herdado;
+            100 a 900: Escala númerica (quanto maior, mais espesso.
+    */
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: var(--cor1);
+}
